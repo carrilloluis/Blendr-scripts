@@ -19,6 +19,7 @@ bpy.ops.object.select_all(action='DESELECT')
 # Dimensions like constants
 SIZE = 2.0
 RADIANS = math.pi / 180
+BASE_Z = SIZE * math.sin(234 * RADIANS)
 
 # Set the reference POINT to build mesh
 center = Vector((0, 0, 0))
@@ -34,12 +35,12 @@ object_pentagon = bpy.data.objects.new(name, mesh_pentagon)
 
 vertex_pentagon = [
 	(center.x, center.y, center.z), # P0
-	(center.x + SIZE, center.y, center.z), # P1
-	(center.x + (SIZE * math.cos(72 * RADIANS)), center.y, center.z + (SIZE * math.sin(72 * RADIANS))), # P2
-	(center.x + (SIZE * math.cos(144 * RADIANS)), center.y, center.z + (SIZE * math.sin(144 * RADIANS))), # P3
-	(center.x + (SIZE * math.cos(216 * RADIANS)), center.y, center.z + (SIZE * math.sin(216 * RADIANS))), # P4
-	(center.x + (SIZE * math.cos(288 * RADIANS)), center.y, center.z + (SIZE * math.sin(288 * RADIANS))), # P5
-	(center.x + (SIZE * math.cos(252 * RADIANS)), center.y, center.z + (SIZE * math.sin(252 * RADIANS))), # P6
+	(center.x + (SIZE * math.cos(18 * RADIANS)), center.y, center.z + (SIZE * math.sin(18 * RADIANS))), # P1
+	(center.x, center.y, center.z  + SIZE), # P2
+	(center.x + (SIZE * math.cos(162 * RADIANS)), center.y, center.z + (SIZE * math.sin(162 * RADIANS))), # P3
+	(center.x + (SIZE * math.cos(234 * RADIANS)), center.y, center.z + BASE_Z), # P4
+	(center.x + (SIZE * math.cos(306 * RADIANS)), center.y, center.z + BASE_Z), # P5
+	(center.x, center.y, center.z + BASE_Z), # P6
 ]
 
 edges_pentagon = [
