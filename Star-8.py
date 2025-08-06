@@ -19,7 +19,6 @@ bpy.ops.object.select_all(action='DESELECT')
 SIZE = 1.0
 HALF_SIZE = SIZE / 2
 LENGTH_ = SIZE + HALF_SIZE
-# DBL_SIZE = 2 * SIZE
 
 # Set the reference POINT to build mesh
 origin = Vector((0, 0, 0))
@@ -82,5 +81,6 @@ bpy.context.scene.cursor.location.xyz = cursor_3d
 
 mesh_star8p.update(calc_edges=True)
 mesh_star8p.update()
+
 
 bpy.context.scene.collection.objects.link(object_star8p)
