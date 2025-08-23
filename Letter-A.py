@@ -41,7 +41,7 @@ vertex_letter_a = [
 	(origin.x - SIZE, origin.y, origin.z + SIZE), # P5
 	(origin.x - SIZE, origin.y, origin.z - DBL_SIZE), # P6
 	(origin.x - DBL_SIZE, origin.y, origin.z - DBL_SIZE) # P7
-] # (origin.x, origin.y, origin.z) # P8
+]
 
 edges_letter_a = [
 	(0, 1), (1, 2), (2, 3), (3, 4),
@@ -60,3 +60,4 @@ mesh_letter_a.update(calc_edges=True)
 mesh_letter_a.update()
 
 bpy.context.scene.collection.objects.link(object_letter_a)
+
